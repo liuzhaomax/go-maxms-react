@@ -8,7 +8,8 @@
     "test": "node scripts/test.js",
     "lint": "eslint src --fix",
     "lint:create": "eslint --init",
-    "lint:report": "eslint ./src -f json --ext .js,.jsx"
+    "lint:report": "eslint ./src -f json --ext .js,.jsx",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
