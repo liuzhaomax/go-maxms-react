@@ -3,7 +3,7 @@ import NoFound from "antd/es/result/noFound"
 import {Button} from "antd"
 import { useNavigate } from "react-router-dom"
 
-function NotFound() {
+const NotFound = () => {
     const [secondsToGo, setSecondsToGo] = useState(5)
     const [timer, setTimer] = useState(null)
     const [timerOut, setTimerOut] = useState(null)
