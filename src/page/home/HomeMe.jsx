@@ -2,10 +2,11 @@ import React, { useEffect } from "react"
 import "./HomeMe.css"
 import portrait from "../../asset/home/0.jpg"
 
-let addFoldedClassRemaining = 1 // 只对第一次进入滚动区时，设置folded和unfolded属性，避免后续打开卡片后，被重新设置属性，从而让被打开的卡片同时具有两种属性的BUG
+let addFoldedClassRemaining = true // 只对第一次进入滚动区时，设置folded和unfolded属性，避免后续打开卡片后，被重新设置属性，从而让被打开的卡片同时具有两种属性的BUG
 
 function HomeMe() {
     useEffect(() => {
+        addFoldedClassRemaining = true
         window.addEventListener("scroll", animation)
         return () => {
             window.removeEventListener("scroll", animation)
@@ -17,6 +18,12 @@ function HomeMe() {
         let intro = document.getElementById("HOME_PROJ_INTRO")
         let me = document.getElementById("home-me")
         let ability = document.getElementsByClassName("home-me-ability")
+        let abilityContent = document.getElementsByClassName("home-me-ability-content")
+        if (addFoldedClassRemaining) {
+            for (let i = 1; i < abilityContent.length; i++) {
+                abilityContent[i].style.display = "none"
+            }
+        }
         let value = window.scrollY
         if (value >= portal.clientHeight + intro.clientHeight &&
             value < portal.clientHeight + intro.clientHeight + me.clientHeight) {
@@ -27,17 +34,32 @@ function HomeMe() {
                 ability[i].classList.add("animation"+i)
             }
             if (addFoldedClassRemaining) {
+                // 动画停止的状态
                 setTimeout(() => {
                     for (let i = 0; i < ability.length; i++) {
                         if (i === ability.length-1) {
                             ability[i].classList.add("unfolded")
+                            abilityContent[i].classList.add("content-unfolded")
                         } else {
                             ability[i].classList.add("folded")
+                            abilityContent[i].classList.add("content-folded")
                         }
                         ability[i].addEventListener("click", onClick)
+                        abilityContent[i].style.display = "block"
                     }
                 },3000)
-                addFoldedClassRemaining = 0
+                // 内容和wrap的同步
+                for (let i = 0; i < abilityContent.length; i++) {
+                    setTimeout(() => {
+                        abilityContent[i].style.display = "block"
+                    }, 500 * i)
+                    if (i !== abilityContent.length-1) {
+                        setTimeout(() => {
+                            abilityContent[i].style.display = "none"
+                        }, 500 * (i + 1))
+                    }
+                }
+                addFoldedClassRemaining = false
             }
         } else if (value >= portal.clientHeight + intro.clientHeight + me.clientHeight) {
             me.classList.remove("home-me-fixed")
@@ -53,11 +75,16 @@ function HomeMe() {
     const onClick = e => {
         e.preventDefault()
         let ability = document.getElementsByClassName("home-me-ability")
+        let abilityContent = document.getElementsByClassName("home-me-ability-content")
         for (let i = 0; i < ability.length; i++) {
             for (let j = 0; j < ability[i].classList.length; j++) {
                 if (ability[i].classList[j] === "unfolded") {
                     ability[i].classList.remove("unfolded")
                     ability[i].classList.add("folded")
+                    abilityContent[i].classList.remove("content-folded")
+                    abilityContent[i].classList.add("content-unfolded")
+                    e.currentTarget.children[0].children[1].children[0].classList.remove("content-folded")
+                    e.currentTarget.children[0].children[1].children[0].classList.add("content-unfolded")
                     e.currentTarget.classList.remove("folded")
                     e.currentTarget.classList.add("unfolded")
                     i = ability.length

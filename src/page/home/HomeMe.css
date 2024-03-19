@@ -51,6 +51,12 @@
 .unfolded .home-me-ability-content-wrap {
     display: flex;
 }
+.content-folded {
+    display: none;
+}
+.content-unfolded {
+    display: block;
+}
 
 /*动画初值*/
 .others {
@@ -178,12 +184,12 @@
 
 .basic-content {
     transform: skewX(10deg) translateX(80px);
-    height: 300px;
+    height: 250px;
 }
 
 .common-content {
     transform: skewX(10deg) translateX(0px);
-    height: 80vh;
+    height: 72vh;
 }
 
 
