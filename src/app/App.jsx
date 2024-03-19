@@ -4,7 +4,7 @@ import {ConfigProvider} from "antd"
 import {BrowserRouter as Router} from "react-router-dom"
 import routes from "./routes"
 
-const App: React.FC = () => (
+const App = () => (
     <div id="App" className="App">
         <ConfigProvider theme={{ token: { colorPrimary: "#338e6c" } }}>
             <Router>{ routes }</Router>
