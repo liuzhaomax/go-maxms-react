@@ -1,0 +1,6 @@
+#HOME {
+    position: relative;
+    background-color: #4b626d;
+    color: white;
+    height: calc(300vh - 80px);
+}
