@@ -5,11 +5,10 @@ import App from "./app/App"
 import { Provider } from "react-redux"
 import { _STORE } from "./state/store"
 import axios from "axios"
-import env from "./env/env.json"
 import config from "./config/config"
 
 // https upgrading config
-if (env.run_mode === "prod") {
+if (process.env.NODE_ENV === "production") {
     const head = document.getElementsByTagName("head")[0]
     const https = document.createElement("meta")
     https.setAttribute("http-equiv", "Content-Security-Policy")
