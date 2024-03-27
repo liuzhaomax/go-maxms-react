@@ -4,8 +4,7 @@ import "./index.css"
 import App from "./app/App"
 import { Provider } from "react-redux"
 import { _STORE } from "./state/store"
-import axios from "axios"
-import config from "./config/config"
+import initAxios from "./config/axios"
 
 // https upgrading config
 if (process.env.NODE_ENV === "production") {
@@ -16,7 +15,8 @@ if (process.env.NODE_ENV === "production") {
     head.appendChild(https)
 }
 
-axios.defaults.baseURL = config.beBaseUrl
+// init axios
+initAxios()
 
 createRoot(document.getElementById("root")).render(
     <Provider store={_STORE}>
