@@ -140,6 +140,7 @@ pipeline {
                             ${npmHome}/bin/npm run build
                             cd server
                             ${npmHome}/bin/npm install --max_old_space_size=1024
+                            ls /usr/src/app/build/favicon.ico
                             cd ..
                         """
                     }
