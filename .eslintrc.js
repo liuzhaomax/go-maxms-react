@@ -19,6 +19,11 @@ module.exports = {
     "plugins": [
         "react"
     ],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
     "ignorePatterns": [
         "temp.js",
         "**/vendor/*.js",
@@ -45,5 +50,8 @@ module.exports = {
             "never"
         ],
         "react/prop-types": "off"
+    },
+    "globals": {
+        "process": "readonly"
     }
 }
