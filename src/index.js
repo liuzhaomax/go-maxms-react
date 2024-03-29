@@ -6,6 +6,14 @@ import { Provider } from "react-redux"
 import { _STORE } from "./state/store"
 import initAxios from "./config/axios"
 
+if (typeof process === "undefined") {
+    window.process = {
+        env: {
+            NODE_ENV: "production"
+        },
+    }
+}
+
 // https upgrading config
 if (process.env.NODE_ENV === "production") {
     const head = document.getElementsByTagName("head")[0]
