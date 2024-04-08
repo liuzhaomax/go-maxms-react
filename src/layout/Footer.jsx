@@ -70,7 +70,7 @@ function Footer() {
                     </p>
                     <p>
                         如有洽谈与合作需求，请点击
-                        <a href={GITHUB} target="_blank" rel="noreferrer" style={{fontWeight:"bold"}}>这里</a>
+                        <a href={GITHUB} target="_blank" rel="noreferrer" style={{fontWeight:"bold",color:"#338e6c"}}>这里</a>
                         跳转至个人GitHub页面，并查看联系方式。
                     </p>
                     <p>
