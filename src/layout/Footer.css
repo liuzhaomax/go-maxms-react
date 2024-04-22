@@ -52,6 +52,15 @@ hr {
     height: 100px;
 }
 
+.footer-upper-nav-item-wrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 150px;
+}
+
 .footer-upper-nav h3 {
     color: white;
     font-size: 20px;
@@ -69,6 +78,7 @@ hr {
     justify-content: space-evenly;
     align-items: flex-start;
     margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 #CONTRIBUTORS {
@@ -77,7 +87,7 @@ hr {
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
-    width: 300px;
+    width: 220px;
     height: 100%;
 }
 

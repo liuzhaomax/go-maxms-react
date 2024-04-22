@@ -39,24 +39,32 @@ function Footer() {
                 <div id="footer-upper-wrap">
                     <img id="footer-logo" className="footer-upper-wrap" src={logo} alt={"logo"}/>
                     <div className="footer-upper-nav">
-                        <h3 onClick={jumpToAnchor.bind(this, HOME )}>推荐作品</h3>
-                        <p onClick={jumpToAnchor.bind(this, HOME)}>锚点</p>
+                        <h3>相关资源</h3>
+                        <div className="footer-upper-nav-item-wrap">
+                            <a href="https://github.com/liuzhaomax/go-maxms" target="_blank" rel="noreferrer">后端脚手架</a>
+                            <a href="https://github.com/liuzhaomax/go-maxms-react" target="_blank" rel="noreferrer">前端脚手架</a>
+                            <a href="https://space.bilibili.com/18359348?spm_id_from=333.1007.0.0" target="_blank" rel="noreferrer">脚手架使用教程</a>
+                        </div>
                     </div>
                     <div className="footer-upper-nav">
                         <h3>贡献者</h3>
-                        <div id="CONTRIBUTORS"></div>
-                    </div>
-                    <div className="footer-upper-nav">
-                        <h3>相关资源</h3>
-                        <a href="https://www.baidu.com" target="_blank" rel="noreferrer">百度</a>
+                        <div className="footer-upper-nav-item-wrap">
+                            <div id="CONTRIBUTORS"></div>
+                        </div>
                     </div>
                     <div className="footer-upper-nav">
                         <h3>管理入口</h3>
-                        <a href="" target="_blank" rel="noreferrer">Admin CMS</a>
-                        <a href="" target="_blank" rel="noreferrer">Monitor</a>
-                        <a href="https://mahara.infotech.monash.edu/view/view.php?id=56000" target="_blank" rel="noreferrer">Mahara SM Page</a>
-                        <a href="https://mahara.infotech.monash.edu/view/view.php?id=56002" target="_blank" rel="noreferrer">Mahara IM Page</a>
-                        <a href="https://monashie.leankit.com/board/1602422272" target="_blank" rel="noreferrer">LeanKit Board</a>
+                        <div className="footer-upper-nav-item-wrap">
+                            <a href="http://106.15.94.179:9602" target="_blank" rel="noreferrer">CMS平台</a>
+                            <a href="https://jenkins.liuzhaomax.cn" target="_blank" rel="noreferrer">Jenkins</a>
+                            <a href="https://vault.liuzhaomax.cn" target="_blank" rel="noreferrer">Vault</a>
+                            <a href="https://consul.liuzhaomax.cn" target="_blank" rel="noreferrer">Consul</a>
+                            <a href="https://prometheus.liuzhaomax.cn" target="_blank" rel="noreferrer">Prometheus</a>
+                            <a href="https://grafana.liuzhaomax.cn" target="_blank" rel="noreferrer">Grafana</a>
+                            <a href="https://kibana.liuzhaomax.cn" target="_blank" rel="noreferrer">Kibana</a>
+                            <a href="https://jaeger.liuzhaomax.cn" target="_blank" rel="noreferrer">Jaeger</a>
+                            <a href="http://106.15.94.179:9877" target="_blank" rel="noreferrer">RocketMQ</a>
+                        </div>
                     </div>
                 </div>
                 <hr/>
