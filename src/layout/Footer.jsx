@@ -39,6 +39,10 @@ function Footer() {
                 <div id="footer-upper-wrap">
                     <img id="footer-logo" className="footer-upper-wrap" src={logo} alt={"logo"}/>
                     <div className="footer-upper-nav">
+                        <h3 onClick={jumpToAnchor.bind(this, HOME )}>推荐作品</h3>
+                        <p onClick={jumpToAnchor.bind(this, HOME)}>锚点</p>
+                    </div>
+                    <div className="footer-upper-nav">
                         <h3>相关资源</h3>
                         <div className="footer-upper-nav-item-wrap">
                             <a href="https://github.com/liuzhaomax/go-maxms" target="_blank" rel="noreferrer">后端脚手架</a>
