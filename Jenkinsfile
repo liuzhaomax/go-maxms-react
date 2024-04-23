@@ -24,6 +24,7 @@ pipeline {
         Host_port = "9600" // 启用随机端口，会被赋值
         JobName = "go-maxms-react/main"
         DeploymentServerIP = "172.16.96.98"
+        StaticFolderName = "maxblog"
     }
     // 流水线阶段
     stages {
@@ -202,7 +203,7 @@ pipeline {
                     echo "Port: ${Host_port}"
                     sh """
                         chmod +x ./server/deploy.sh
-                        ./server/deploy.sh $harborAddress $harborRepo $ProjectKey $TAG $Container_port $Host_port $ENV $DeploymentServerIP
+                        ./server/deploy.sh $harborAddress $harborRepo $ProjectKey $TAG $Container_port $Host_port $ENV $DeploymentServerIP $StaticFolderName
                     """
                 }
                 echo "--------------------- Deploy End ---------------------"
